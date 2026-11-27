@@ -62,21 +62,15 @@
     position:relative;
   }
 
-  /* Logo styling */
-  .logo-container{
-    display:inline-block;
-    background-color: #f4faf5; /* Matches the cream/white background */
-    padding: 14px 28px;
-    border-radius: 14px;
-    margin: 0 auto 30px;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 30px rgba(217,178,106,0.1);
-  }
-
+  /* Logo styling (No Frame) */
   .logo{
-    display:block;
+    display: block;
     width:100%;
-    max-width: 340px;
+    max-width: 380px;
     height:auto;
+    margin: 0 auto 35px;
+    /* Soft shadow to help it pop off the dark background */
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.4));
   }
 
   .eyebrow{
@@ -280,8 +274,7 @@
     .tribute{padding:40px 24px;}
     header{padding:40px 0 30px;}
     .wrap{padding:0 20px 70px;}
-    .logo-container{padding:10px 16px; margin-bottom:24px;}
-    .logo{max-width: 240px;}
+    .logo{max-width: 280px; margin-bottom: 25px;}
   }
 
   /* ---------- REVEAL ANIMATION ---------- */
@@ -314,10 +307,8 @@
   <!-- ================= HEADER ================= -->
   <header class="fade d1">
     
-    <!-- Official Logo -->
-    <div class="logo-container">
-      <img class="logo" src="https://9z3zrkn6fybvejzi.public.blob.vercel-storage.com/R%26S%20Logo.png" alt="Roots & Shoots Rwanda Logo">
-    </div>
+    <!-- Official Logo (No Frame) -->
+    <img class="logo" src="https://9z3zrkn6fybvejzi.public.blob.vercel-storage.com/R%26S%20Logo.png" alt="Roots & Shoots Rwanda Logo">
 
     <div class="eyebrow">Continuing Jane Goodall's Legacy</div>
 
