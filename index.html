@@ -1,378 +1,416 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Roots &amp; Shoots Rwanda — Continuing Jane Goodall's Legacy</title>
-  <meta name="description" content="Roots & Shoots Rwanda is part of a global movement inspired by Dr. Jane Goodall. Together we make a positive difference for people, animals, and the environment." />
-  <style>
-    /* ---------- RESET & BASE ---------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roots &amp; Shoots Rwanda — Continuing Jane Goodall's Legacy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-deepest:#04120b;
+    --bg-deep:#07231a;
+    --bg-mid:#0b3a28;
+    --bg-soft:#10523a;
+    --gold:#d9b26a;
+    --gold-soft:#e8cd97;
+    --cream:#eaf3ec;
+    --muted:#a9c6b6;
+    --line:rgba(217,178,106,.28);
+  }
 
-    :root {
-      --green-dark: #1f4d2b;
-      --green: #2e7d32;
-      --green-light: #4caf50;
-      --green-soft: #e8f5e9;
-      --earth: #7a5230;
-      --cream: #fbfaf5;
-      --text: #2b2b2b;
-      --text-light: #5a5a5a;
-      --white: #ffffff;
-    }
+  *{margin:0;padding:0;box-sizing:border-box;}
 
-    html {
-      scroll-behavior: smooth;
-    }
+  html{scroll-behavior:smooth;}
 
-    body {
-      font-family: Georgia, 'Times New Roman', serif;
-      line-height: 1.7;
-      color: var(--text);
-      background-color: var(--cream);
-    }
+  body{
+    font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    color:var(--cream);
+    background:
+      radial-gradient(1200px 600px at 50% -10%, #0f4c35 0%, transparent 60%),
+      radial-gradient(900px 500px at 100% 100%, #0a3524 0%, transparent 55%),
+      linear-gradient(180deg, var(--bg-deepest) 0%, var(--bg-deep) 45%, var(--bg-mid) 100%);
+    background-attachment:fixed;
+    min-height:100vh;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
 
-    h1, h2, h3 {
-      font-family: 'Trebuchet MS', Verdana, sans-serif;
-      line-height: 1.25;
-    }
+  /* subtle leaf texture overlay */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.05;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'><path d='M60 20c18 8 26 24 26 40 0 16-12 28-26 40-14-12-26-24-26-40 0-16 8-32 26-40z' fill='none' stroke='%23d9b26a' stroke-width='1.2'/></svg>");
+    background-size:120px 120px;
+  }
 
-    a {
-      color: var(--green);
-      text-decoration: none;
-    }
+  .wrap{
+    position:relative;
+    max-width:960px;
+    margin:0 auto;
+    padding:0 26px 90px;
+  }
 
-    a:hover {
-      text-decoration: underline;
-    }
+  /* ---------- HEADER ---------- */
+  header{
+    text-align:center;
+    padding:78px 0 54px;
+    position:relative;
+  }
 
-    /* ---------- LAYOUT ---------- */
-    .container {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+  .tree-mark{
+    width:74px;
+    height:74px;
+    margin:0 auto 26px;
+    display:block;
+    opacity:.95;
+    filter:drop-shadow(0 0 22px rgba(217,178,106,.28));
+  }
 
-    section {
-      padding: 56px 0;
-      border-bottom: 1px solid #e3e3d8;
-    }
+  .eyebrow{
+    font-size:.72rem;
+    letter-spacing:.42em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:500;
+    margin-bottom:22px;
+  }
 
-    section:last-of-type {
-      border-bottom: none;
-    }
+  h1{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-weight:700;
+    font-size:clamp(2.1rem,5.6vw,3.5rem);
+    line-height:1.15;
+    letter-spacing:.01em;
+    color:#f4faf5;
+  }
 
-    /* ---------- HERO ---------- */
-    .hero {
-      background: linear-gradient(160deg, var(--green-dark) 0%, var(--green) 100%);
-      color: var(--white);
-      text-align: center;
-      padding: 80px 24px 70px;
-    }
+  h1 .sub{
+    display:block;
+    font-size:.42em;
+    font-weight:400;
+    font-style:italic;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--gold-soft);
+    margin-top:18px;
+  }
 
-    .hero .leaf {
-      font-size: 3.5rem;
-      display: block;
-      margin-bottom: 12px;
-    }
+  .rule{
+    width:110px;
+    height:1px;
+    margin:34px auto 0;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
 
-    .hero h1 {
-      font-size: 2.4rem;
-      margin-bottom: 14px;
-      letter-spacing: 0.5px;
-    }
+  /* ---------- TAGLINE ---------- */
+  .tagline{
+    text-align:center;
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:clamp(1.25rem,3vw,1.7rem);
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin:0 0 60px;
+    line-height:1.5;
+  }
 
-    .hero .tagline {
-      font-size: 1.1rem;
-      font-style: italic;
-      opacity: 0.95;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
+  /* ---------- CARDS ---------- */
+  .card{
+    background:linear-gradient(160deg, rgba(16,82,58,.55) 0%, rgba(7,35,26,.75) 100%);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:38px 40px;
+    margin-bottom:30px;
+    backdrop-filter:blur(3px);
+    box-shadow:0 20px 50px -30px rgba(0,0,0,.9);
+  }
 
-    /* ---------- HEADINGS ---------- */
-    .section-title {
-      font-size: 1.6rem;
-      color: var(--green-dark);
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+  .card p + p{margin-top:18px;}
 
-    .section-title::after {
-      content: "";
-      flex: 1;
-      height: 2px;
-      background: linear-gradient(to right, var(--green-light), transparent);
-    }
+  .card p{
+    font-size:1.03rem;
+    font-weight:300;
+    color:#dcebe1;
+  }
 
-    /* ---------- TEXT ---------- */
-    p {
-      margin-bottom: 16px;
-      font-size: 1.05rem;
-    }
+  .card strong{
+    color:var(--gold-soft);
+    font-weight:500;
+  }
 
-    .highlight {
-      font-size: 1.25rem;
-      font-weight: bold;
-      color: var(--green-dark);
-      text-align: center;
-      padding: 26px 20px;
-      background: var(--green-soft);
-      border-left: 6px solid var(--green-light);
-      border-radius: 6px;
-      margin: 24px 0;
-    }
+  .label{
+    display:inline-block;
+    font-size:.68rem;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    color:var(--gold);
+    font-weight:500;
+    margin-bottom:16px;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--line);
+  }
 
-    /* ---------- LIST ---------- */
-    ul.actions-list {
-      list-style: none;
-      margin: 18px 0;
-    }
+  /* ---------- TREE / TRIBUTE BLOCK ---------- */
+  .tribute{
+    text-align:center;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:52px 40px;
+    margin-bottom:30px;
+    background:
+      radial-gradient(600px 200px at 50% 0%, rgba(217,178,106,.10), transparent 70%),
+      linear-gradient(160deg, rgba(16,82,58,.5) 0%, rgba(7,35,26,.8) 100%);
+    box-shadow:0 20px 50px -30px rgba(0,0,0,.9);
+  }
 
-    ul.actions-list li {
-      padding: 10px 0 10px 38px;
-      position: relative;
-      font-size: 1.05rem;
-      border-bottom: 1px dashed #ddd;
-    }
+  .tribute h2{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:clamp(1.4rem,3.4vw,1.9rem);
+    font-weight:600;
+    color:#f4faf5;
+    margin-bottom:18px;
+    letter-spacing:.02em;
+  }
 
-    ul.actions-list li:last-child {
-      border-bottom: none;
-    }
+  .tribute p{
+    font-size:1.02rem;
+    font-weight:300;
+    color:#dcebe1;
+    max-width:640px;
+    margin:0 auto;
+  }
 
-    ul.actions-list li::before {
-      content: "🌿";
-      position: absolute;
-      left: 6px;
-      top: 10px;
-      font-size: 1rem;
-    }
+  /* ---------- CLOSING LINES ---------- */
+  .closing{
+    text-align:center;
+    margin:60px 0 46px;
+  }
 
-    /* ---------- TRIBUTE BOX ---------- */
-    .tribute {
-      background: var(--white);
-      border: 1px solid #e0e0d0;
-      border-radius: 12px;
-      padding: 32px 28px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      text-align: center;
-    }
+  .closing .line{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:clamp(1.05rem,2.4vw,1.3rem);
+    font-style:italic;
+    font-weight:400;
+    color:#cfe3d6;
+    line-height:1.95;
+    letter-spacing:.02em;
+  }
 
-    .tribute .tree {
-      font-size: 2.8rem;
-      display: block;
-      margin-bottom: 10px;
-    }
+  .closing .line span{display:block;}
 
-    .tribute p {
-      font-style: italic;
-      color: var(--text-light);
-    }
+  .manifesto{
+    text-align:center;
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:clamp(1.35rem,3.6vw,2rem);
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin:56px 0 12px;
+    line-height:1.45;
+  }
 
-    /* ---------- CTA ---------- */
-    .cta {
-      text-align: center;
-      padding: 64px 24px;
-      background: var(--green-soft);
-      border-bottom: none;
-    }
+  /* ---------- CTA ---------- */
+  .cta-block{
+    text-align:center;
+    padding:16px 0 10px;
+  }
 
-    .cta h2 {
-      color: var(--green-dark);
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-    }
+  .cta-title{
+    font-size:.74rem;
+    letter-spacing:.34em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:28px;
+  }
 
-    .cta .btns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      justify-content: center;
-      margin-top: 26px;
-    }
+  .btn{
+    display:inline-block;
+    padding:15px 40px;
+    border:1px solid var(--gold);
+    border-radius:999px;
+    color:var(--gold-soft);
+    text-decoration:none;
+    font-size:.78rem;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    font-weight:500;
+    transition:.35s ease;
+    background:rgba(217,178,106,.06);
+  }
 
-    .btn {
-      display: inline-block;
-      padding: 13px 28px;
-      border-radius: 50px;
-      font-family: 'Trebuchet MS', Verdana, sans-serif;
-      font-size: 1rem;
-      font-weight: bold;
-      text-decoration: none;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
+  .btn:hover{
+    background:var(--gold);
+    color:#04120b;
+    box-shadow:0 0 34px rgba(217,178,106,.4);
+    transform:translateY(-2px);
+  }
 
-    .btn:hover {
-      text-decoration: none;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-    }
+  /* ---------- FOOTER ---------- */
+  footer{
+    text-align:center;
+    margin-top:64px;
+    padding-top:34px;
+    border-top:1px solid var(--line);
+  }
 
-    .btn-primary {
-      background: var(--green);
-      color: var(--white);
-    }
+  footer .url{
+    display:block;
+    font-size:.86rem;
+    letter-spacing:.06em;
+    color:var(--gold-soft);
+    text-decoration:none;
+    margin-bottom:26px;
+    word-break:break-word;
+  }
 
-    .btn-secondary {
-      background: var(--white);
-      color: var(--green-dark);
-      border: 2px solid var(--green);
-    }
+  footer .url:hover{text-decoration:underline;}
 
-    /* ---------- FOOTER ---------- */
-    footer {
-      text-align: center;
-      padding: 40px 24px 48px;
-      background: var(--green-dark);
-      color: #d9e8da;
-      font-size: 0.95rem;
-    }
+  footer .motto{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:clamp(1rem,2.5vw,1.2rem);
+    font-style:italic;
+    color:#c9ded2;
+    letter-spacing:.03em;
+  }
 
-    footer .motto {
-      font-family: 'Trebuchet MS', Verdana, sans-serif;
-      font-weight: bold;
-      color: var(--white);
-      font-size: 1.05rem;
-      margin-bottom: 14px;
-      letter-spacing: 0.3px;
-    }
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:600px){
+    .card{padding:30px 24px;}
+    .tribute{padding:40px 24px;}
+    header{padding:56px 0 40px;}
+    .wrap{padding:0 20px 70px;}
+  }
 
-    footer a {
-      color: #b9e4bc;
-    }
+  /* ---------- REVEAL ANIMATION ---------- */
+  .fade{
+    opacity:0;
+    transform:translateY(18px);
+    animation:fadeUp .9s ease forwards;
+  }
+  .d1{animation-delay:.1s}
+  .d2{animation-delay:.25s}
+  .d3{animation-delay:.4s}
+  .d4{animation-delay:.55s}
+  .d5{animation-delay:.7s}
+  .d6{animation-delay:.85s}
 
-    footer .small {
-      font-size: 0.85rem;
-      opacity: 0.75;
-      margin-top: 16px;
-    }
+  @keyframes fadeUp{
+    to{opacity:1;transform:translateY(0);}
+  }
 
-    /* ---------- RESPONSIVE ---------- */
-    @media (max-width: 600px) {
-      .hero {
-        padding: 60px 20px 50px;
-      }
-      .hero h1 {
-        font-size: 1.75rem;
-      }
-      .hero .tagline {
-        font-size: 0.9rem;
-      }
-      section {
-        padding: 44px 0;
-      }
-      .section-title {
-        font-size: 1.35rem;
-      }
-      .highlight {
-        font-size: 1.1rem;
-        padding: 20px 16px;
-      }
-    }
-  </style>
+  @media (prefers-reduced-motion:reduce){
+    .fade{animation:none;opacity:1;transform:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
 </head>
 <body>
 
-  <!-- ========== HERO ========== -->
-  <header class="hero">
-    <span class="leaf">🌳</span>
-    <h1>Roots &amp; Shoots Rwanda</h1>
-    <p class="tagline">A Tree of Hope. A Legacy of Action.</p>
+<div class="wrap">
+
+  <!-- ================= HEADER ================= -->
+  <header class="fade d1">
+    <!-- Simple tree emblem -->
+    <svg class="tree-mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+      <path d="M50 88V46" stroke="#d9b26a" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M50 62 36 50M50 56 64 44M50 72 38 62M50 68 62 58"
+            stroke="#d9b26a" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M50 12c14 8 22 20 22 33 0 12-9 22-22 32-13-10-22-20-22-32 0-13 8-25 22-33z"
+            stroke="#d9b26a" stroke-width="1.8" stroke-linejoin="round"/>
+      <circle cx="50" cy="45" r="3" fill="#d9b26a"/>
+    </svg>
+
+    <div class="eyebrow">Roots &amp; Shoots Rwanda</div>
+
+    <h1>
+      Continuing Jane Goodall's Legacy
+      <span class="sub">A Tree of Hope. A Legacy of Action.</span>
+    </h1>
+
+    <div class="rule"></div>
   </header>
 
-  <!-- ========== INTRO ========== -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">Who We Are</h2>
-      <p>
-        <strong>Roots &amp; Shoots Rwanda</strong> is part of a global movement inspired by
-        Dr. Jane Goodall, the renowned primatologist, conservationist, and humanitarian.
-        Established in Rwanda in <strong>2021</strong>, the organisation brings young people
-        and communities together to make a positive difference for people, animals, and the
-        environment.
-      </p>
-    </div>
-  </section>
+  <!-- ================= TAGLINE ================= -->
+  <p class="tagline fade d2">A Tree of Hope. A Legacy of Action.</p>
 
-  <!-- ========== OUR STORY ========== -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">Our Story</h2>
-      <p>
-        The movement began in <strong>1991</strong>, when Jane Goodall met with a group of young
-        people in Tanzania who wanted to make a difference in their communities. From that
-        simple gathering grew a global movement built on compassion, hope, and the belief that
-        every individual can change the world.
-      </p>
-      <p>
-        Inspired by her vision, Roots &amp; Shoots Rwanda continues this legacy through:
-      </p>
-      <ul class="actions-list">
-        <li>Environmental education</li>
-        <li>Wildlife conservation</li>
-        <li>Animal welfare</li>
-        <li>Tree planting</li>
-        <li>Community engagement</li>
-      </ul>
-      <p>
-        We believe that meaningful change begins when people care enough to take action.
-      </p>
-    </div>
-  </section>
-
-  <!-- ========== TRIBUTE ========== -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">A Living Tribute</h2>
-      <div class="tribute">
-        <span class="tree">🌱</span>
-        <p>
-          This tree is planted in honour of <strong>Dr. Jane Goodall</strong> and the
-          extraordinary legacy she leaves behind. As it grows, may it remind us that hope is
-          something we nurture through our everyday actions.
-        </p>
-        <p>
-          Her journey continues through every young person inspired to care, every animal
-          protected, every community empowered, and every tree planted.
-        </p>
-      </div>
-      <div class="highlight">
-        Her hope took root.<br />Our actions keep it growing.
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CALL TO ACTION ========== -->
-  <section class="cta">
-    <div class="container">
-      <h2>Discover more. Get inspired. Take action.</h2>
-      <p>Join us in making a difference for people, animals, and the environment.</p>
-      <div class="btns">
-        <a class="btn btn-primary" href="https://rootsandshootsrwanda.org" target="_blank" rel="noopener">
-          Visit Our Website
-        </a>
-        <a class="btn btn-secondary" href="https://rootsandshootsrwanda.org" target="_blank" rel="noopener">
-          Get Involved
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== FOOTER ========== -->
-  <footer>
-    <p class="motto">Together we can, together we will, we must change the world!</p>
+  <!-- ================= INTRO CARD ================= -->
+  <section class="card fade d2">
+    <span class="label">Who We Are</span>
     <p>
-      Roots &amp; Shoots Rwanda —
-      <a href="https://rootsandshootsrwanda.org" target="_blank" rel="noopener">rootsandshootsrwanda.org</a>
+      <strong>Roots &amp; Shoots Rwanda</strong> is part of a global movement inspired by
+      Dr. Jane Goodall, the renowned primatologist, conservationist and humanitarian.
+      Established in Rwanda in <strong>2021</strong>, the organisation brings young people
+      and communities together to make a positive difference for people, animals and
+      the environment.
     </p>
-    <p class="small">Inspired by the legacy of Dr. Jane Goodall 🌿</p>
+    <p>
+      The movement began in <strong>1991</strong>, when Jane Goodall met with a group of young
+      people in Tanzania who wanted to make a difference in their communities. From that
+      simple gathering grew a global movement built on <strong>compassion, hope</strong> and the
+      belief that every individual can change the world.
+    </p>
+  </section>
+
+  <!-- ================= WHAT WE DO ================= -->
+  <section class="card fade d3">
+    <span class="label">Our Work</span>
+    <p>
+      Inspired by her vision, Roots &amp; Shoots Rwanda continues this legacy through
+      <strong>environmental education, wildlife conservation, animal welfare, tree planting
+      and community engagement</strong>. We believe that meaningful change begins when people
+      care enough to take action.
+    </p>
+  </section>
+
+  <!-- ================= TRIBUTE ================= -->
+  <section class="tribute fade d4">
+    <h2>Planted in Honour of Dr. Jane Goodall</h2>
+    <p>
+      This tree is planted in honour of Dr. Jane Goodall and the extraordinary legacy she
+      leaves behind. As it grows, may it remind us that hope is something we nurture through
+      our everyday actions.
+    </p>
+  </section>
+
+  <!-- ================= CLOSING LINES ================= -->
+  <section class="closing fade d5">
+    <div class="line">
+      <span>Her journey continues through every young person inspired to care,</span>
+      <span>every animal protected,</span>
+      <span>every community empowered</span>
+      <span>and every tree planted.</span>
+    </div>
+  </section>
+
+  <p class="manifesto fade d5">
+    Her hope took root.<br>Our actions keep it growing.
+  </p>
+
+  <!-- ================= CTA ================= -->
+  <div class="cta-block fade d6">
+    <div class="cta-title">Discover More &nbsp;·&nbsp; Get Inspired &nbsp;·&nbsp; Take Action</div>
+    <a class="btn" href="https://rootsandshootsrwanda.org" target="_blank" rel="noopener">
+      Visit Roots &amp; Shoots Rwanda
+    </a>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="fade d6">
+    <a class="url" href="https://rootsandshootsrwanda.org" target="_blank" rel="noopener">
+      rootsandshootsrwanda.org
+    </a>
+    <p class="motto">
+      Together we can, together we will, we must change the world!
+    </p>
   </footer>
+
+</div>
 
 </body>
 </html>
