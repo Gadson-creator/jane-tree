@@ -58,17 +58,25 @@
   /* ---------- HEADER ---------- */
   header{
     text-align:center;
-    padding:78px 0 54px;
+    padding:60px 0 40px;
     position:relative;
   }
 
-  .tree-mark{
-    width:74px;
-    height:74px;
-    margin:0 auto 26px;
+  /* Logo styling */
+  .logo-container{
+    display:inline-block;
+    background-color: #f4faf5; /* Matches the cream/white background */
+    padding: 14px 28px;
+    border-radius: 14px;
+    margin: 0 auto 30px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 30px rgba(217,178,106,0.1);
+  }
+
+  .logo{
     display:block;
-    opacity:.95;
-    filter:drop-shadow(0 0 22px rgba(217,178,106,.28));
+    width:100%;
+    max-width: 340px;
+    height:auto;
   }
 
   .eyebrow{
@@ -283,8 +291,10 @@
   @media (max-width:600px){
     .card{padding:30px 24px;}
     .tribute{padding:40px 24px;}
-    header{padding:56px 0 40px;}
+    header{padding:40px 0 30px;}
     .wrap{padding:0 20px 70px;}
+    .logo-container{padding:10px 16px; margin-bottom:24px;}
+    .logo{max-width: 240px;}
   }
 
   /* ---------- REVEAL ANIMATION ---------- */
@@ -316,28 +326,23 @@
 
   <!-- ================= HEADER ================= -->
   <header class="fade d1">
-    <!-- Simple tree emblem -->
-    <svg class="tree-mark" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-      <path d="M50 88V46" stroke="#d9b26a" stroke-width="2.2" stroke-linecap="round"/>
-      <path d="M50 62 36 50M50 56 64 44M50 72 38 62M50 68 62 58"
-            stroke="#d9b26a" stroke-width="1.6" stroke-linecap="round"/>
-      <path d="M50 12c14 8 22 20 22 33 0 12-9 22-22 32-13-10-22-20-22-32 0-13 8-25 22-33z"
-            stroke="#d9b26a" stroke-width="1.8" stroke-linejoin="round"/>
-      <circle cx="50" cy="45" r="3" fill="#d9b26a"/>
-    </svg>
+    
+    <!-- Official Logo -->
+    <div class="logo-container">
+      <img class="logo" src="https://9z3zrkn6fybvejzi.public.blob.vercel-storage.com/R%26S%20Logo.png" alt="Roots & Shoots Rwanda Logo">
+    </div>
 
-    <div class="eyebrow">Roots &amp; Shoots Rwanda</div>
+    <div class="eyebrow">Continuing Jane Goodall's Legacy</div>
 
     <h1>
-      Continuing Jane Goodall's Legacy
-      <span class="sub">A Tree of Hope. A Legacy of Action.</span>
+      A Tree of Hope.<br>A Legacy of Action.
     </h1>
 
     <div class="rule"></div>
   </header>
 
   <!-- ================= TAGLINE ================= -->
-  <p class="tagline fade d2">A Tree of Hope. A Legacy of Action.</p>
+  <p class="tagline fade d2">Roots &amp; Shoots Rwanda</p>
 
   <!-- ================= INTRO CARD ================= -->
   <section class="card fade d2">
